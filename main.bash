@@ -8,28 +8,8 @@ export PURPLE='\033[0;35m'
 export CYAN='\033[0;36m'
 export NC='\033[0m' # No Color
 
+./printingLogo.bash
 clear
-
-echo "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-echo "⠀⠀⠀⠀⠀⠀⠀⠀⠐⢿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀"
-echo "⠀⠀⠀⠀⠀⢀⣴⣿⣦⡀⠙⠉⠻⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀"
-echo "⠀⠀⠀⢀⣴⣿⣿⣿⣿⣇⠀⠀⠀⢽⣿⣿⣿⣿⣦⡀⠀⠀⠀"
-echo "⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⡇⠀⣦⡀⠙⢿⢿⣿⣿⣿⣦⡀⠀"
-echo "⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⡆⠀⠀⠈⢻⣿⣿⣿⣆"
-echo "⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⣿⣿⣷⣄⣀⣠⣿⣿⣿⠟⠁       Git Learner"
-echo "⠀⠀⠙⢿⣿⣿⣿⣿⣿⡿⠃ ⠻⣿⣿⣿⣿⣿⣿⠟  By Clément Gambier/Mabile and Théo Mouisse"
-echo "⠀⠀⠀⠀⠙⢿⣿⣿⣿⣷   ⣾⣿⣿⣿⠟⠁⠀⠀ "
-echo "⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀"
-echo "        ⠙⢿⣿⣿⣿⠟⠁         "
-echo "          ⠙⠛⠁            "
-
-# Wait 2 second and print a menu after 
-sleep 2
-
-
-# clean the screen 
-clear
-
 
 # Define the menu options
 options=("Start" "Credit" "Quit")
@@ -67,9 +47,7 @@ while [ $is_quitting != 1 ]; do
             case $option_index in
                 0) # Start
                     clear
-                    echo "Starting..."
-                    sleep 1
-                    clear
+                    ./branch/branchLesson.bash
                     ;;
                 1) # Credit
                     clear
