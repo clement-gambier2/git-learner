@@ -8,8 +8,8 @@ export PURPLE='\033[0;35m'
 export CYAN='\033[0;36m'
 export NC='\033[0m' # No Color
 
-
 ./printingLogo.bash
+clear
 
 # Define the menu options
 options=("Start" "Credit" "Quit")
