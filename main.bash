@@ -8,7 +8,7 @@ export PURPLE='\033[0;35m'
 export CYAN='\033[0;36m'
 export NC='\033[0m' # No Color
 
-./printingLogo.bash
+./utils/printingLogo.bash
 clear
 
 # Define the menu options
@@ -47,7 +47,7 @@ while [ $is_quitting != 1 ]; do
             case $option_index in
                 0) # Start
                     clear
-                    ./branch/branchLesson.bash
+                    ./commit/addCommit.bash
                     ;;
                 1) # Credit
                     clear
