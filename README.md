@@ -2,11 +2,11 @@
 
 ## To do :pencil:
 
-- [ ] Make a questionnary function
-- [ ] Create a repository (Théo)
-  - [ ] Create file
-- [ ] Create a branch (Clément G)
-- [ ] Add & make a commit (Clément M)
+- [X] Make a questionnary function
+- [X] Create a repository (Théo)
+  - [X] Create file
+- [X] Create a branch (Clément G)
+- [X] Add & make a commit (Clément M)
 - [ ] Push changes
 - [ ] Open a pull request
 - [ ] Merge a pull request
