@@ -44,7 +44,7 @@ init_repo_files() {
     # Create a .gitignore file in the repository directory.
     touch .gitignore
 
-    echo "The $repo_name repository has been successfully created on GitHub."
+    echo "The $repo_name repository has been successfully created on Git."
 }
 
 check_command_init(){
@@ -83,3 +83,8 @@ echo "To finish creating your repository, add a description to your repository."
 echo "This description will appear in your README.md"
 
 init_repo_files
+
+# redirect to the next part
+read -p $'\e[0;35m      Press enter to continue...\e[0m '
+clear
+../commit/addCommit.bash

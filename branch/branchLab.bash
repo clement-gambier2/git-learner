@@ -33,3 +33,4 @@ git_exercise() {
 # Call the Git exercise function
 git_exercise
 sleep 2
+./finalPage.bash

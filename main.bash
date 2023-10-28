@@ -47,7 +47,8 @@ while [ $is_quitting != 1 ]; do
             case $option_index in
                 0) # Start
                     clear
-                    ./commit/addCommit.bash
+                    # ./commit/addCommit.bash
+                    ./repository/repository.bash
                     ;;
                 1) # Credit
                     clear

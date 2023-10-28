@@ -61,6 +61,8 @@ check_and_explain_command() {
 
 section_header "In this part, we will explain the principles of 'git status', 'git add', and 'git commit'."
 
+
+
 while true; do
     section_header "First, let's explain how the 'git status' command works."
     section_header  "Ok so 'git status' is a Git command used to display the current status of your working directory with respect to the Git repository. (named 'repo-git')"
@@ -80,6 +82,8 @@ while true; do
 
     section_header "Ok, now you're going to modify the file, you can write whatever you want, but you have to write something !"
     read -p "Enter text to add to README.md: " user_input
+    # because earlier we cd into the repo, we need to cd back out
+    cd ..
     section_info "$user_input" >> ./commit/README.md
 
     section_header "The text has been added to README.md."
@@ -120,4 +124,7 @@ done
 
 check_and_explain_command "git commit -m 'Your commit message'" "That's it for 'git commit'."
 
+# redirect to the next part
+read -p $'\e[0;35m      Press enter to continue...\e[0m '
+clear
 ./branch/branchLesson.bash
