@@ -24,5 +24,4 @@ mcq "${question}" "options[@]" "${correct}"
 
 
 read -p $'\e[0;35m      Press enter to continue...\e[0m '
-clear
 ./branch/branchLab.bash

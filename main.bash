@@ -16,7 +16,7 @@ options=("Start" "Credit" "Quit")
 
 # Set the default option
 option_index=0
-is_quitting=0
+export is_quitting=0
 
 # Print the menu
 while [ $is_quitting != 1 ]; do
@@ -47,7 +47,6 @@ while [ $is_quitting != 1 ]; do
             case $option_index in
                 0) # Start
                     clear
-                    # ./commit/addCommit.bash
                     ./repository/repository.bash
                     ;;
                 1) # Credit

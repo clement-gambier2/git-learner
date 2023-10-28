@@ -12,8 +12,9 @@ CYAN="\033[1;36m"
 NC="\033[0m"
 
 state=1
+is_quitting=0
 
-while true; do
+while [ $is_quitting -eq 0 ]; do
   clear
 
   case "$state" in
@@ -76,6 +77,7 @@ while true; do
       # If we're on the last state, go to the test
       if [ $state -eq 4 ]; then
         clear
+        is_quitting=1
         ./branch/branchMcq.bash
       fi
       ;;
