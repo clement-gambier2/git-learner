@@ -14,6 +14,7 @@ git_exercise() {
     # Question 1: Create a new branch
     echo -e "${PURPLE}Question 1: Create a new branch named 'my-new-branch' from the 'master' branch.${NC}"
     read -p "Enter the Git command to create the new branch: " user_response
+    
     if [[ "$user_response" == "git branch my-new-branch" ]]; then
         echo -e "${GREEN}Correct answer!${NC}"
     else

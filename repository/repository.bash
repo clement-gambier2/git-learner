@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-source ./utils/colorText.sh
+source ./utils/colorText.bash
 YELLOW='\033[0;33m'
 RESET='\033[0m'
 
@@ -71,8 +71,12 @@ presentation_init_command
 read -p "Enter the name of the repository you want to create: " repo_name
 
 # Create a new directory with the name of the repository.
-while [ -d "$repo_name" ]; do
-    print_error "Error: A directory with the name '$repo_name' already exists."
+while [[ -z "$repo_name" || -d "$repo_name" ]]; do
+    if [ -z "$repo_name" ]; then
+        print_error "Error: The repository name cannot be empty."
+    elif [ -d "$repo_name" ]; then
+        print_error "Error: A directory with the name '$repo_name' already exists."
+    fi
     read -p "Enter a new name for the repository: " repo_name
 done
 
@@ -84,7 +88,9 @@ echo "This description will appear in your README.md"
 
 init_repo_files
 
+rmdir -r ../$repo_name
+
 # redirect to the next part
 read -p $'\e[0;35m      Press enter to continue...\e[0m '
 clear
-../commit/addCommit.bash
+./commit/addCommit.bash

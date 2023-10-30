@@ -54,14 +54,14 @@ check_and_explain_command() {
     for ((attempts = 1; attempts <= max_attempts; attempts++)); do
         read -p "Enter the command: " response
 
-        if [ "$response" = "$correct_command" ]; then
+        if [[ "$response" == "$correct_command" ]]; then
             echo -e "${CHECK_EMOJI} Great! $explanation${RESET}"
             break
-        elif [ "$response" = "no" ]; then
+        elif [[ "$response" == "no" ]]; then
             echo -e "Oh... let's try again?"
             break
         else
-            if [ $attempts -ge $max_attempts ]; then
+            if [[ $attempts -ge $max_attempts ]]; then
                 section_invalid "${INVALID_EMOJI} Sorry, you've reached the maximum number of attempts. The correct command is: '$correct_command'."
                 break
             else
@@ -82,7 +82,7 @@ while true; do
     section_info "It provides information about modified files, files staged for the next commit, and untracked files."
     prompt_yes_no "Are you ready?"
 
-    if [ "$response" = "yes" ]; then
+    if [[ "$response" == "yes" ]]; then
         break
     fi
 done
@@ -92,13 +92,15 @@ clear
 while true; do
     section_header "The 'git add' command stages changes for the next commit."
     section_info "'git add' allows you to select which changes to include in the upcoming commit."
+    section_info "You can use 'git add' to stage a file or a directory."
+    section_info "Let's try to use git add to stage the README.md file."
     prompt_yes_no "Are you ready?"
 
-    if [ "$response" = "yes" ]; then
+    if [[ "$response" == "yes" ]]; then
         break
     fi
 done
-check_and_explain_command "git add <file>" "Now let's do the same thing for 'git commit'."
+check_and_explain_command "git add README.md" "Now let's do the same thing for 'git commit'."
 clear
 
 section_header "Now you need to use the 'git commit' command to create a new snapshot of your changes."
@@ -106,13 +108,15 @@ while true; do
     section_header "Let's explain how the 'git commit' command works."
     section_info "'git commit' creates a new snapshot of the staged changes."
     section_info "Each commit represents a specific point in your project's history with a descriptive message."
+    section_info "To add the necessary message to your commit, you have to use the '-m' option."
+    section_info "Let's try to use git commit with the message 'My first commit'."
     prompt_yes_no "Are you ready?"
 
-    if [ "$response" = "yes" ]; then
+    if [[ "$response" == "yes" ]]; then
         break
     fi
 done
-check_and_explain_command "git commit -m 'Your commit message'" "That's it for 'git commit'."
+check_and_explain_command "git commit -m 'My first commit'" "That's it for 'git commit'."
 
 # Redirect to the next part
 read -p $'\e[0;35mPress enter to continue...\e[0m '
