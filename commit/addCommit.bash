@@ -7,8 +7,6 @@ CYAN="\033[36m"   # Cyan color
 RESET="\033[0m"   # Reset color
 
 BRANCH_EMOJI="🌿"
-INFO_EMOJI="💡"
-COMMAND_EMOJI="🚀"
 CHECK_EMOJI="✅"
 INVALID_EMOJI="❌"
 
@@ -88,6 +86,28 @@ while true; do
 done
 check_and_explain_command "git status" "Now let's do the same thing for 'git add'."
 clear
+
+while true; do
+
+    section_header "Ok, now you're going to modify the file, you can write whatever you want, but you have to write something !"
+    read -p "Enter text to add to README.md: " user_input
+    # because earlier we cd into the repo, we need to cd back out
+    cd ..
+    section_info "$user_input" >> ./commit/README.md
+
+    section_header "The text has been added to README.md."
+    cat ./commit/README.md
+    section_header "Now i will explain how git add works !"
+    section_header "The git add command is used in Git to stage changes in your working directory for inclusion in the next commit."
+    section_header "It's an essential step in the Git workflow, allowing you to select which changes you want to include in a commit and which ones you want to exclude."
+    prompt_yes_no "Are you ready?"
+
+    if [ "$response" = "yes" ]; then
+        break
+    fi
+done
+clear
+
 
 while true; do
     section_header "The 'git add' command stages changes for the next commit."
