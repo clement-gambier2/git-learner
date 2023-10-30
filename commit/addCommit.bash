@@ -7,8 +7,6 @@ CYAN="\033[36m"   # Cyan color
 RESET="\033[0m"   # Reset color
 
 BRANCH_EMOJI="🌿"
-INFO_EMOJI="💡"
-COMMAND_EMOJI="🚀"
 CHECK_EMOJI="✅"
 INVALID_EMOJI="❌"
 
